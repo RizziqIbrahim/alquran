@@ -12,11 +12,6 @@ const Ayat = props => {
     })
     return(
         <div>
-            <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                    <h1 className="display-4">Al-Quran Indonesia</h1>
-                </div>
-            </div>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-10 info-panel">
@@ -37,10 +32,8 @@ const Ayat = props => {
                                         )
                                     })
                                     :
-                                    <div className="col-md-12 col-sm-12">
-                                        <div className="spinner-border text-primary" role="status">
-                                            <span className="sr-only">Loading...</span>
-                                        </div>  
+                                    <div class="spinner-border" role="status">
+                                        <span class="visually-hidden">Loading...</span>
                                     </div>
                             }
                         </div>

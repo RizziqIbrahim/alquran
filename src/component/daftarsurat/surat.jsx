@@ -13,35 +13,41 @@ const Surat = props => {
     }
     return (
         <div>
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">Al-Quran Indonesia</h1>
-                </div>
-            </div>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-10 info-panel">
                         <div class="row justify-content-center">
-                        {
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nama Surat</th>
+                                <th scope="col">Arti</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {
                             data.length > 0 ?
                                 data.map((param,index) => {
                                     return(
                                         
-                                            <div className="col-md-3 col-sm-12 info-surat" key={index} onClick={() => click(param.nomor)}>
-                                                <h5>{param.nomor}.{param.nama}</h5>
-                                                <p>{param.arti}</p>
-                                            </div>
+                                            <tr style={{cursor:'pointer'}}key={index} onClick={() => click(param.nomor)}>
+                                                <td>{param.nomor}</td>
+                                                <td>{param.nama}</td>
+                                                <td>{param.arti}</td>
+                                            </tr>
                                     )
                                 })
                             :
-                            <div class="row justify-content-center">
-                                <div className="col-md-12 col-sm-12">
-                                    <div class="spinner-border text-primary" role="status">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
+                            <div class="row align-content-center justify-content-center">
+                                <div class="spinner-border" role="status">
+                                        <span class="visually-hidden">Loading...</span>
                                 </div>
                             </div>
                         }
+                            </tbody>
+                            </table>
+                        {/*  */}
                         </div>
                     </div>
                 </div>
